@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>RSS Feeds</title>
-    <meta author="Varun Ramakrishnan" />
+    <head>
+        <meta charset="utf-8">
+        <title>RSS Feeds</title>
+        <meta author="Varun Ramakrishnan"/>
 
-    <link rel="stylesheet" href="../css/lib/bootstrap/bootstrap.css" />
-    <link rel="stylesheet" href="../css/custom/style.css" />
-    <script src="../js/lib/jquery/jquery-2.0.0.js"></script>
-    <script src="../js/lib/bootstrap/bootstrap.js"></script>
-    <script src="../js/lib/angular/angular.js"></script>
-    <script src="../js/lib/angular/angular-resource.js"></script>
-    <script src="../js/lib/angular/angular-route.js"></script>
+        <link rel="stylesheet" href="../css/lib/bootstrap/bootstrap.css"/>
+        <link rel="stylesheet" href="../css/custom/style.css"/>
 
-    <script src="../js/custom/app.js"></script>
-    <script src="../js/custom/controllers.js"></script>
-  </head>
+        <script src="../js/lib/jquery/jquery-2.0.0.js"></script>
+        <script src="../js/lib/bootstrap/bootstrap.js"></script>
+        <script src="../js/lib/angular/angular.js"></script>
+        <script src="../js/lib/angular/angular-resource.js"></script>
+        <script src="../js/lib/angular/angular-route.js"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+            google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
+        </script>
 
-  <body ng-app="">
-    <div class="jumbotron">
-      <h1>My Feeds</h1>
-      <p>You can add or remove feeds in the Settings tab below</p>
-    </div>
+        <script src="../js/custom/app.js"></script>
+    </head>
 
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="">Feeds</a></li>
-      <li role="presentation" class=""><a href="">Settings</a></li>
-    </ul>
+    <body ng-app="FeedReader">
+        <div class="jumbotron">
+            <h1>My Feeds</h1>
+            <p>You can add or remove feeds in the Settings tab below</p>
+        </div>
 
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active">
+                <a href="">Feeds</a>
+            </li>
+            <li role="presentation" class="">
+                <a href="">Settings</a>
+            </li>
+        </ul>
 
-  </body>
+        <div class="container-fluid" ng-controller="FeedController">
+            <a href="" ng-click="loadFeed()" class="btn btn-success">Load Feeds</a>
+            <ul ng-repeat="entry in result.feed.entries">
+                <li>
+                    <h3>{{entry.title}}</h3>
+                </li>
+            </ul>
+        </div>
+    </body>
 </html>
