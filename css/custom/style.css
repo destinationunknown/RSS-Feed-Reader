@@ -5,3 +5,7 @@
 .nav-tabs {
   background-color: #eeeeee;
 }
+
+.nav-tabs > li > a {
+  background-color: #e2e2e2;
+}
