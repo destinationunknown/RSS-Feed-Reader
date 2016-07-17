@@ -13,6 +13,7 @@
         <script src="../js/lib/angular/angular.js"></script>
         <script src="../js/lib/angular/angular-resource.js"></script>
         <script src="../js/lib/angular/angular-route.js"></script>
+        <script src="../js/lib/angular/angular-sanitize.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
             google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
@@ -29,20 +30,15 @@
 
         <ul class="nav nav-tabs">
             <li role="presentation" class="active">
-                <a href="">Feeds</a>
+                <a href="#feeds">Feeds</a>
             </li>
             <li role="presentation" class="">
-                <a href="">Settings</a>
+                <a href="#settings">Settings</a>
             </li>
         </ul>
 
-        <div class="container-fluid" ng-controller="FeedController">
-            <a href="" ng-click="loadFeed()" class="btn btn-success">Load Feeds</a>
-            <ul ng-repeat="entry in result.feed.entries">
-                <li>
-                    <h3>{{entry.title}}</h3>
-                </li>
-            </ul>
+        <div ng-view>
+
         </div>
     </body>
 </html>
