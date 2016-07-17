@@ -9,3 +9,7 @@
 .nav-tabs > li > a {
   background-color: #e2e2e2;
 }
+
+input {
+  width: 90%;
+}
