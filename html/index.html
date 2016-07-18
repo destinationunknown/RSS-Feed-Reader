@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../css/lib/bootstrap/bootstrap.css"/>
         <link rel="stylesheet" href="../css/custom/style.css"/>
 
+
         <script src="../js/lib/jquery/jquery-2.0.0.js"></script>
         <script src="../js/lib/bootstrap/bootstrap.js"></script>
         <script src="../js/lib/angular/angular.js"></script>
@@ -20,6 +21,7 @@
         </script>
 
         <script src="../js/custom/app.js"></script>
+        <script src="../js/custom/controllers.js"></script>
     </head>
 
     <body ng-app="FeedReader">
@@ -28,12 +30,12 @@
             <p>You can add or remove feeds in the Settings tab below</p>
         </div>
 
-        <ul class="nav nav-tabs">
-            <li role="presentation" class="active">
+        <ul class="nav nav-tabs" ng-controller="NavController">
+            <li role="presentation" ng-class="home" ng-click="homeClicked()">
                 <a href="#feeds">Feeds</a>
             </li>
-            <li role="presentation" class="">
-                <a href="#settings">Settings</a>
+            <li role="presentation" ng-class="settings">
+                <a href="#settings" ng-click="settingsClicked()">Settings</a>
             </li>
         </ul>
 

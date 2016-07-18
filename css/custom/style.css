@@ -13,3 +13,7 @@
 input {
   width: 90%;
 }
+
+ul {
+  list-style: none
+}
