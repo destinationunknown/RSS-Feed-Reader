@@ -1,0 +1,14 @@
+<input type="url" ng-model="url"/>
+<a href="" ng-click="loadFeed()" class="btn btn-success">Load Feeds</a>
+
+<ul ng-repeat="entry in result.feed.entries">
+    <li ng-init="getImgFromEntry(entry)" class="panel panel-default">
+      <div class="panel-heading">
+        <h3><a ng-href="{{entry.link}}">{{entry.title}}</a></h3>
+        <h6>{{entry.author}}</h6>
+      </div>
+      <div class="panel-body">
+        <p ng-bind-html="entry.content"></p>
+      </div>
+    </li>
+</ul>
