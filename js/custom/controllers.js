@@ -32,6 +32,7 @@ app.controller('FeedController', function($scope, $q, $http) {
                 $scope.$apply();
             }
             else {
+              alert("Failed to load feeds. You may have entered an incorrect RSS URL")
               console.error("Loading feeds failed. Error: " + result.error);
             }
         });
