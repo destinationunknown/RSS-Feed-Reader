@@ -7,17 +7,21 @@
 
         <link rel="stylesheet" href="../css/lib/bootstrap/bootstrap.css"/>
         <link rel="stylesheet" href="../css/custom/style.css"/>
-
+        <link rel="stylesheet" href="../css/custom/animations.css" />
 
         <script src="../js/lib/jquery/jquery-2.0.0.js"></script>
+
         <script src="../js/lib/bootstrap/bootstrap.js"></script>
+
         <script src="../js/lib/angular/angular.js"></script>
         <script src="../js/lib/angular/angular-resource.js"></script>
         <script src="../js/lib/angular/angular-route.js"></script>
         <script src="../js/lib/angular/angular-sanitize.js"></script>
+
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
         <script type="text/javascript">
-            google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
+            google.load("feeds", "1")  //Load Google Ajax Feed API (version 1)
+            // This is required to make sure that any google.feed objects created in following files are not 'null' or 'undefined'
         </script>
 
         <script src="../js/custom/app.js"></script>
@@ -39,8 +43,6 @@
             </li>
         </ul>
 
-        <div ng-view>
-
-        </div>
+        <div ng-view></div>
     </body>
 </html>
